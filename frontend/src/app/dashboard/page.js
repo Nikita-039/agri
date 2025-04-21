@@ -5,7 +5,9 @@ export default function Dashboard() {
     <div className="container-fluid py-5 bg-light text-center min-vh-100">
       {/* Header */}
       <header className="mb-5">
-        <h1 className="display-4 text-success fw-bold">Agri AI Dashboard</h1>
+        <h1 className="display-4 fw-bold" style={{ color: '#006d77' }}>
+          Agri AI Dashboard
+        </h1>
         <p className="lead text-muted">
           Welcome to the Agri AI Smart Dashboard, your go-to platform for accurate crop yield and rainfall predictions.
         </p>

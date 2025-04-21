@@ -6,10 +6,24 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark shadow"
+      style={{ backgroundColor: '#006d77' }}
+    >
       <div className="container-fluid">
-        <Link href="/" className="navbar-brand">
-          🌾 Agri AI Dashboard
+        <Link
+          href="/"
+          className="navbar-brand"
+          style={{
+            background: 'linear-gradient(to right, #00b894, #fdcb6e)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontWeight: 'bold',
+            fontSize: '1.6rem',
+            letterSpacing: '1px',
+          }}
+        >
+          🌾 Agri Ai
         </Link>
         <button
           className="navbar-toggler"
@@ -55,3 +69,8 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+
+
+

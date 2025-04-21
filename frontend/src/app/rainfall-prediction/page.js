@@ -41,7 +41,7 @@ export default function RainfallPredict() {
     <div className="container mt-5">
       {/* Page Header */}
       <header className="text-center mb-4">
-        <h1 className="display-5 fw-bold text-primary">☁️ Rainfall Prediction</h1>
+      <h1 className="display-4 fw-bold" style={{ color: '#006d77' }}>☁️ Rainfall Prediction</h1>
         <p className="text-muted">Enter meteorological parameters below to estimate expected rainfall.</p>
       </header>
 

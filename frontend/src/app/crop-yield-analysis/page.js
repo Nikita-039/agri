@@ -43,7 +43,7 @@ export default function CropYield() {
     <div className="container my-5">
       {/* Page Header */}
       <header className="text-center mb-4">
-        <h1 className="display-5 fw-bold text-success">🌾 Crop Yield Prediction</h1>
+      <h1 className="display-4 fw-bold" style={{ color: '#006d77' }}>🌾 Crop Yield Prediction</h1>
         <p className="text-muted">
           Enter agricultural parameters below to forecast crop yield using our machine learning model.
         </p>

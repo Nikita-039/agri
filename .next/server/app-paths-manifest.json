@@ -1,0 +1,7 @@
+{
+  "/crop-yield-analysis/page": "app/crop-yield-analysis/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/rainfall-prediction/page": "app/rainfall-prediction/page.js"
+}
