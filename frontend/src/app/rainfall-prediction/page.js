@@ -5,7 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function RainfallPredict() {
   const [formData, setFormData] = useState({
+    day: "",           // New field for 'day'
     pressure: "",
+    maxtemp: "",       // New field for 'maxtemp'
+    temparature: "",   // New field for 'temparature'
+    mintemp: "",       // New field for 'mintemp'
     dewpoint: "",
     humidity: "",
     cloud: "",
@@ -14,11 +18,17 @@ export default function RainfallPredict() {
     windspeed: "",
   });
 
+
   const [prediction, setPrediction] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+    }));
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +51,7 @@ export default function RainfallPredict() {
     <div className="container mt-5">
       {/* Page Header */}
       <header className="text-center mb-4">
-      <h1 className="display-4 fw-bold" style={{ color: '#006d77' }}>☁️ Rainfall Prediction</h1>
+        <h1 className="display-4 fw-bold" style={{ color: '#006d77' }}>☁️ Rainfall Prediction</h1>
         <p className="text-muted">Enter meteorological parameters below to estimate expected rainfall.</p>
       </header>
 
@@ -54,33 +64,148 @@ export default function RainfallPredict() {
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-md-6 mb-3">
-                <label htmlFor="pressure" className="form-label">Pressure</label>
-                <input type="number" step="0.1" className="form-control" name="pressure" value={formData.pressure} onChange={handleChange} required />
+                <label htmlFor="day" className="form-label">Day</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="day"
+                  value={formData.day}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
+              <div className="col-md-6 mb-3">
+                <label htmlFor="maxtemp" className="form-label">Max Temperature</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="maxtemp"
+                  value={formData.maxtemp}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="col-md-6 mb-3">
+                <label htmlFor="temparature" className="form-label">Temperature</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="temparature"
+                  value={formData.temparature}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="col-md-6 mb-3">
+                <label htmlFor="mintemp" className="form-label">Min Temperature</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="mintemp"
+                  value={formData.mintemp}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="col-md-6 mb-3">
+                <label htmlFor="pressure" className="form-label">Pressure</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="pressure"
+                  value={formData.pressure}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="dewpoint" className="form-label">Dewpoint</label>
-                <input type="number" step="0.1" className="form-control" name="dewpoint" value={formData.dewpoint} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="dewpoint"
+                  value={formData.dewpoint}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="humidity" className="form-label">Humidity</label>
-                <input type="number" step="0.1" className="form-control" name="humidity" value={formData.humidity} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="humidity"
+                  value={formData.humidity}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="cloud" className="form-label">Cloud</label>
-                <input type="number" step="0.1" className="form-control" name="cloud" value={formData.cloud} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="cloud"
+                  value={formData.cloud}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="sunshine" className="form-label">Sunshine</label>
-                <input type="number" step="0.1" className="form-control" name="sunshine" value={formData.sunshine} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="sunshine"
+                  value={formData.sunshine}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="winddirection" className="form-label">Wind Direction</label>
-                <input type="number" step="0.1" className="form-control" name="winddirection" value={formData.winddirection} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="winddirection"
+                  value={formData.winddirection}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
               <div className="col-md-6 mb-3">
                 <label htmlFor="windspeed" className="form-label">Wind Speed</label>
-                <input type="number" step="0.1" className="form-control" name="windspeed" value={formData.windspeed} onChange={handleChange} required />
+                <input
+                  type="number"
+                  step="0.1"
+                  className="form-control"
+                  name="windspeed"
+                  value={formData.windspeed}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
+
             </div>
 
             <button type="submit" className="btn btn-primary w-100">Predict Rainfall</button>
