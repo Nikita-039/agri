@@ -11,16 +11,11 @@ loaded_model = joblib.load("rainfall_prediction_model_new.pkl")
 
 # Feature order
 feature_names = [
-    'day',
     'pressure',
-    'maxtemp',
     'temparature',
-    'mintemp',
     'dewpoint',
     'humidity',
     'cloud',
-    'sunshine',
-    'winddirection',
     'windspeed'
 ]
 
@@ -35,17 +30,12 @@ def predict():
         data = request.get_json()
 
         # Extracting the features from the incoming data
-        input_data = [[
-            float(data.get('day', 0)),        # Default 0 if 'day' is not provided
+        input_data = [[       
             float(data['pressure']),
-            float(data.get('maxtemp', 0)),    # Default 0 if 'maxtemp' is not provided
             float(data.get('temparature', 0)),# Default 0 if 'temparature' is not provided
-            float(data.get('mintemp', 0)),    # Default 0 if 'mintemp' is not provided
             float(data['dewpoint']),
             float(data['humidity']),
             float(data['cloud']),
-            float(data['sunshine']),
-            float(data['winddirection']),
             float(data['windspeed'])
         ]]
 

@@ -5,16 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function RainfallPredict() {
   const [formData, setFormData] = useState({
-    day: "",           // New field for 'day'
     pressure: "",
-    maxtemp: "",       // New field for 'maxtemp'
     temparature: "",   // New field for 'temparature'
-    mintemp: "",       // New field for 'mintemp'
     dewpoint: "",
     humidity: "",
     cloud: "",
-    sunshine: "",
-    winddirection: "",
     windspeed: "",
   });
 
@@ -63,30 +58,6 @@ export default function RainfallPredict() {
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-md-6 mb-3">
-                <label htmlFor="day" className="form-label">Day</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  name="day"
-                  value={formData.day}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="col-md-6 mb-3">
-                <label htmlFor="maxtemp" className="form-label">Max Temperature</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  className="form-control"
-                  name="maxtemp"
-                  value={formData.maxtemp}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
 
               <div className="col-md-6 mb-3">
                 <label htmlFor="temparature" className="form-label">Temperature</label>
@@ -101,18 +72,7 @@ export default function RainfallPredict() {
                 />
               </div>
 
-              <div className="col-md-6 mb-3">
-                <label htmlFor="mintemp" className="form-label">Min Temperature</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  className="form-control"
-                  name="mintemp"
-                  value={formData.mintemp}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              
 
               <div className="col-md-6 mb-3">
                 <label htmlFor="pressure" className="form-label">Pressure</label>
@@ -167,32 +127,6 @@ export default function RainfallPredict() {
               </div>
 
               <div className="col-md-6 mb-3">
-                <label htmlFor="sunshine" className="form-label">Sunshine</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  className="form-control"
-                  name="sunshine"
-                  value={formData.sunshine}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="col-md-6 mb-3">
-                <label htmlFor="winddirection" className="form-label">Wind Direction</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  className="form-control"
-                  name="winddirection"
-                  value={formData.winddirection}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="col-md-6 mb-3">
                 <label htmlFor="windspeed" className="form-label">Wind Speed</label>
                 <input
                   type="number"
@@ -204,7 +138,6 @@ export default function RainfallPredict() {
                   required
                 />
               </div>
-
 
             </div>
 
